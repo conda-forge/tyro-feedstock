@@ -1,5 +1,5 @@
 {% set name = "tyro" %}
-{% set version = "0.8.6" %}
+{% set version = "0.8.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tyro-{{ version }}.tar.gz
-  sha256: 4cf519126078c9b1373ae6445cde13e5b3465ac4bfc1a26633d5915a5f6be5ff
+  sha256: dab62f6942d216c502d051daa9bacc9335e43e688b7abad64b563fb727b20a75
 
 build:
   noarch: python
