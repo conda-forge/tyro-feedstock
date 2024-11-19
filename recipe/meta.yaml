@@ -1,13 +1,13 @@
 {% set name = "tyro" %}
-{% set version = "0.8.14" %}
+{% set version = "0.9.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tyro-{{ version }}.tar.gz
-  sha256: 2516e34d21763575159459c3b15fe4a13472a2166dff32169c9d7aab70853058
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tyro-{{ version }}.tar.gz
+  sha256: 05c6a2c6d0584b5605972ac563cd3d6afa75597f0f8ce9d32581ce43b9a0f927
 
 build:
   noarch: python
@@ -16,18 +16,19 @@ build:
 
 requirements:
   host:
-    - python >=3.7
-    - setuptools >=61.0
+    - python {{ python_min }}
+    - hatchling
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - docstring_parser >=0.14.1
-    - typing-extensions >=4.3.0
+    - typing-extensions >=4.9.0
     - pyyaml >=6.0
     - colorama >=0.4.0
     - frozendict >=2.3.4
     - rich >=11.1.0
     - shtab >=1.5.6
+    - eval_type_backport >=0.1.3
 
 test:
   imports:
@@ -35,6 +36,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
