@@ -1,13 +1,17 @@
 About tyro-feedstock
 ====================
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/tyro-feedstock/blob/main/LICENSE.txt)
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/tyro-feedstock-v1-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/brentyi/tyro
 
 Package license: MIT
 
 Summary: Strongly typed, zero-effort CLI interfaces
+
+Development: https://github.com/brentyi/tyro
+
+Documentation: https://brentyi.github.io/tyro/
 
 Current build status
 ====================
@@ -16,8 +20,8 @@ Current build status
 <table><tr>
     <td>All platforms:</td>
     <td>
-      <a href="https://github.com/conda-forge/tyro-feedstock/actions/workflows/conda-build.yml">
-        <img src="https://github.com/conda-forge/tyro-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      <a href="https://github.com/conda-forge/tyro-feedstock-v1-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/tyro-feedstock-v1-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
       </a>
     </td>
   </tr>
