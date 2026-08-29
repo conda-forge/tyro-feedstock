@@ -1,0 +1,56 @@
+schema_version: 1
+
+context:
+  name: tyro
+  version: "1.0.16"
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/t/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: edf23c9c3eecba5a2b5af152df8f34a723b689a001ff5b7311f93eff1893a636
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - docstring_parser >=0.16
+    - typeguard >=4.0.0
+    - typing-extensions >=4.13.0
+
+tests:
+  - python:
+      imports:
+        - tyro
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - script:
+      - python -c "import tyro; assert tyro.cli(int, args=['3']) == 3"
+    requirements:
+      run:
+        - python ${{ python_min }}.*
+
+about:
+  homepage: https://github.com/brentyi/tyro
+  repository: https://github.com/brentyi/tyro
+  documentation: https://brentyi.github.io/tyro/
+  summary: Strongly typed, zero-effort CLI interfaces
+  license: MIT
+  license_file: LICENSE
+
+extra:
+  feedstock-name: tyro
+  recipe-maintainers:
+    - traversaro
